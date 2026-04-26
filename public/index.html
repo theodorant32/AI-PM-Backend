@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App - PM Accelerator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Weather App</h1>
+      <p class="subtitle">Technical Assessment - Product Manager Accelerator</p>
+      <p class="company-info">
+        The PM Accelerator provides training and career development for aspiring product managers.
+        Learn more at <a href="https://www.linkedin.com/company/product-manager-accelerator" target="_blank">Product Manager Accelerator</a>.
+      </p>
+    </header>
+
+    <section class="search-section">
+      <h2>Search Weather</h2>
+      <form id="searchForm">
+        <div class="form-group">
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" placeholder="Enter city, zip code, or coordinates" required>
+        </div>
+        <div class="form-group">
+          <label for="date_from">From Date</label>
+          <input type="date" id="date_from" name="date_from" required>
+        </div>
+        <div class="form-group">
+          <label for="date_to">To Date</label>
+          <input type="date" id="date_to" name="date_to" required>
+        </div>
+        <button type="submit" class="btn-primary">Get Weather</button>
+      </form>
+      <div id="message" class="message"></div>
+    </section>
+
+    <section id="result" class="result-section" style="display: none;">
+      <h2>Weather Result</h2>
+      <div class="weather-card">
+        <div class="weather-main">
+          <h3 id="res-location"></h3>
+          <img id="res-icon" src="" alt="Weather icon">
+          <p id="res-description" class="weather-desc"></p>
+          <p class="temperature"><span id="res-temp"></span>°C</p>
+          <p class="feels-like">Feels like <span id="res-feels"></span>°C</p>
+        </div>
+        <div class="weather-details">
+          <p><strong>Humidity:</strong> <span id="res-humidity"></span>%</p>
+          <p><strong>Pressure:</strong> <span id="res-pressure"></span> hPa</p>
+          <p><strong>Wind Speed:</strong> <span id="res-wind"></span> m/s</p>
+          <p><strong>Date Range:</strong> <span id="res-dates"></span></p>
+          <p><strong>Coordinates:</strong> <span id="res-coords"></span></p>
+        </div>
+        <div class="external-links">
+          <a id="res-maps" href="#" target="_blank" class="btn-secondary">View on Google Maps</a>
+          <a id="res-youtube" href="#" target="_blank" class="btn-secondary">Watch on YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="saved-section">
+      <h2>Saved Searches</h2>
+      <div id="savedList" class="saved-list"></div>
+    </section>
+
+    <section class="export-section">
+      <h2>Export Data</h2>
+      <div class="export-buttons">
+        <button onclick="exportData('json')" class="btn-secondary">Export JSON</button>
+        <button onclick="exportData('csv')" class="btn-secondary">Export CSV</button>
+        <button onclick="exportData('xml')" class="btn-secondary">Export XML</button>
+        <button onclick="exportData('markdown')" class="btn-secondary">Export Markdown</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
