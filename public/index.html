@@ -10,19 +10,24 @@
   <div class="container">
     <header>
       <h1>Weather App</h1>
-      <p class="subtitle">Technical Assessment - Product Manager Accelerator</p>
-      <p class="company-info">
-        The PM Accelerator provides training and career development for aspiring product managers.
-        Learn more at <a href="https://www.linkedin.com/company/product-manager-accelerator" target="_blank">Product Manager Accelerator</a>.
-      </p>
     </header>
 
     <section class="search-section">
       <h2>Search Weather</h2>
       <form id="searchForm">
-        <div class="form-group">
-          <label for="location">Location</label>
-          <input type="text" id="location" name="location" placeholder="Enter city, zip code, or coordinates" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+              <option value="">Select Country</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <select id="city" name="city" required>
+              <option value="">Select Country First</option>
+            </select>
+          </div>
         </div>
         <div class="form-group">
           <label for="date_from">From Date</label>
@@ -39,25 +44,39 @@
 
     <section id="result" class="result-section" style="display: none;">
       <h2>Weather Result</h2>
+
       <div class="weather-card">
         <div class="weather-main">
+          <div class="weather-header">
+            <img id="res-icon" src="" alt="Weather icon">
+            <div class="temp-badge" id="temp-badge">
+              <span class="temp-badge-emoji" id="temp-badge-emoji"></span>
+              <span class="temp-badge-label" id="temp-badge-label"></span>
+            </div>
+          </div>
           <h3 id="res-location"></h3>
-          <img id="res-icon" src="" alt="Weather icon">
           <p id="res-description" class="weather-desc"></p>
           <p class="temperature"><span id="res-temp"></span>°C</p>
-          <p class="feels-like">Feels like <span id="res-feels"></span>°C</p>
+          <p class="current-weather-note">Current conditions</p>
         </div>
         <div class="weather-details">
           <p><strong>Humidity:</strong> <span id="res-humidity"></span>%</p>
+          <p><strong>Wind:</strong> <span id="res-wind"></span> m/s</p>
           <p><strong>Pressure:</strong> <span id="res-pressure"></span> hPa</p>
-          <p><strong>Wind Speed:</strong> <span id="res-wind"></span> m/s</p>
-          <p><strong>Date Range:</strong> <span id="res-dates"></span></p>
-          <p><strong>Coordinates:</strong> <span id="res-coords"></span></p>
+          <p><strong>Search Period:</strong> <span id="res-dates"></span></p>
         </div>
         <div class="external-links">
           <a id="res-maps" href="#" target="_blank" class="btn-secondary">View on Google Maps</a>
           <a id="res-youtube" href="#" target="_blank" class="btn-secondary">Watch on YouTube</a>
         </div>
+      </div>
+
+      <div id="forecast-warning" class="forecast-warning" style="display: none;"></div>
+
+      <div id="forecast-section" class="forecast-section" style="display: none;">
+        <h3>Forecast</h3>
+        <div id="forecast-container" class="forecast-container"></div>
+        <button id="show-more-btn" class="btn-secondary" style="display: none; margin-top: 16px;">Show More</button>
       </div>
     </section>
 
@@ -72,6 +91,7 @@
         <button onclick="exportData('json')" class="btn-secondary">Export JSON</button>
         <button onclick="exportData('csv')" class="btn-secondary">Export CSV</button>
         <button onclick="exportData('xml')" class="btn-secondary">Export XML</button>
+        <button onclick="exportData('pdf')" class="btn-secondary">Export PDF</button>
         <button onclick="exportData('markdown')" class="btn-secondary">Export Markdown</button>
       </div>
     </section>

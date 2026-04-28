@@ -1,6 +1,14 @@
-# Weather App - PM Accelerator Technical Assessment
+# Weather App
 
-**Assessment:** Tech Assessment #2 (Backend)
+Full-stack weather application with real-time data, forecasts, and data export.
+
+## Features
+
+- Search by location (country/city dropdowns or custom input)
+- Current weather + 5-day forecast
+- CRUD operations for weather searches
+- Export to JSON, CSV, XML, PDF, Markdown
+- Google Maps & YouTube integrations
 
 ## Setup
 
@@ -21,26 +29,8 @@ YOUTUBE_API_KEY=your_key_here
 npm start
 ```
 
-App runs at http://localhost:3000
-
-## API Endpoints
-
-**Weather CRUD:**
-- `POST /api/weather/search` - Search with location + date range
-- `GET /api/weather` - Get all searches
-- `GET /api/weather/search/:id` - Get by ID
-- `PUT /api/weather/:id` - Update
-- `DELETE /api/weather/:id` - Delete
-
-**Export:**
-- `GET /api/export/json` - Export as JSON
-- `GET /api/export/csv` - Export as CSV
-- `GET /api/export/xml` - Export as XML
-- `GET /api/export/markdown` - Export as Markdown
+Open http://localhost:3000
 
 ## Tech Stack
 
-- Node.js + Express
-- SQLite (better-sqlite3)
-- OpenWeatherMap API
-- YouTube API (optional)
+Node.js, Express, SQLite (better-sqlite3), OpenWeatherMap API

@@ -43,6 +43,8 @@ const initialize = () => {
 };
 
 const createWeatherSearch = (data) => {
+  // Extract current_weather data for backward compatibility with exports
+  const currentWeather = data.current_weather || data;
   const stmt = db.prepare(`
     INSERT INTO weather_searches (
       location_query, location_name, country, latitude, longitude,
@@ -59,13 +61,13 @@ const createWeatherSearch = (data) => {
     data.longitude,
     data.date_from,
     data.date_to,
-    data.temperature,
-    data.feels_like,
-    data.humidity,
-    data.pressure,
-    data.wind_speed,
-    data.weather_description,
-    data.weather_icon,
+    currentWeather.temperature,
+    currentWeather.feels_like,
+    currentWeather.humidity,
+    currentWeather.pressure,
+    currentWeather.wind_speed,
+    currentWeather.weather_description,
+    currentWeather.weather_icon,
     data.youtube_url,
     data.maps_url
   );
