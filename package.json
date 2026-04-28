@@ -1,13 +1,13 @@
 {
-  "name": "weather-app-pm-accelerator",
+  "name": "weather-app-backend",
   "version": "1.0.0",
-  "description": "Weather App - PM Accelerator Technical Assessment (Backend)",
+  "description": "Full-stack weather application with real-time data, forecasts, and data export",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "author": "",
+  "author": "Theodoros Antentas",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.15.2",
@@ -16,6 +16,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-rate-limit": "^8.4.1",
-    "helmet": "^8.1.0"
+    "helmet": "^8.1.0",
+    "pdfkit": "^0.15.0"
   }
 }
