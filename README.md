@@ -1,6 +1,6 @@
 # Weather App
 
-Full-stack weather application with real-time data, forecasts, and data export.
+AI-PM Backend Assessment Application
 
 ## Features
 
@@ -58,9 +58,6 @@ Open http://localhost:3000
 - Node.js
 - Express.js
 - SQLite (better-sqlite3)
+- JavaScript
 - OpenWeatherMap API
 - YouTube Data API
-
-## Author
-
-Theodoros Antentas
